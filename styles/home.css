@@ -1,0 +1,46 @@
+.contant {
+  display: grid;
+  grid-template-columns: 60% 40%; /*Tamanho das colunas*/
+  grid-template-rows: 11.4rem 1fr; /*tamanho das linhas, neste caso definiu primeiro o tamanho do header em rem e depois para pegar o restante total utilizou o fr, caso tivesse mais linhas era só acresctar mais fr */
+
+  grid-template-areas: 'header header' 'left right';
+  /*primeira linha e primeira coluna*/
+  /*Define o que vai ser direita e o que vai ser na esquerda*/
+}
+
+.header {
+  grid-area: header;
+}
+#bg {
+  grid-area: left;
+  background: url('/assets/home-bg-img.svg.svg') no-repeat top/contain;
+}
+
+main {
+  grid-area: right;
+  display: flex;
+  align-items: center;
+}
+
+main .container {
+  width: min(36.3rem 100%);
+}
+
+main h2 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--black);
+  font-size: clamp(20px, 5vw, 2.8rem);
+  margin-bottom: 2.4rem;
+}
+
+input {
+  border: 0.2rem solid var(--grey-blue);
+  padding: 0 1.6rem;
+}
+
+input,
+button,
+.button {
+  width: 100%;
+  margin-bottom: 1.8rem;
+}
