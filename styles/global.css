@@ -33,6 +33,7 @@ html {
 }
 
 body {
+  display: flex;
   height: 100vh; /*View heigth, pegar a altura total da tela*/
   width: 100vw; /*View width, pega a largura total da tela*/
   background: var(--background);
