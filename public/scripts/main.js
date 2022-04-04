@@ -33,6 +33,12 @@ function handleClick(event, check = true) {
   /* Texto para troca. */
   // true? 'faz algo' : 'faz outra '
   const text = check ? 'Marcar como lida' : 'Excluir'
+  const slug = check ? 'check' : 'delete'
+  const form = document.querySelector('.modal form')
+  const roomId = document.querySelector('#room-id').dataset.id
+  const questionId = event.target.dataset.id
+
+  form.setAttribute('Action', `room/${roomId}/${questionId}/${slug}`)
 
   modalTitle.innerHTML = `${text} esta pergunta`
   modalDescription.innerHTML = `Tem certeza que deseja ${text.toLowerCase()} está pergunta?`

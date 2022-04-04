@@ -10,6 +10,8 @@ server.use(express.static('public')) //Pegando os conteudos estaticos da pasta p
 
 server.set('views', path.join(__dirname, 'views')) // Pegando o caminho da pasta views
 
+server.use(express.urlencoded({ extended: true })) //É um middleware, ela pega o conteudo do formulario e decodifica
+
 server.use(route) // Usando o arquivo route das rotas
 
 server.listen(3000, () => console.log('Rodando')) // Inicia em uma porta
