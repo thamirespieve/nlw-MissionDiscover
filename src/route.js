@@ -1,5 +1,6 @@
 const express = require('express')
 const QuestionController = require('./controllers/QuestionController.js')
+const RoomController = require('./controllers/RoomController')
 
 const route = express.Router()
 
@@ -18,13 +19,13 @@ route.get('/create-pass', (req, res) =>
 })*/
 
 //Criando uma rota para a room
-route.get('/room', (req, res) => {
+route.get('/room/:room', (req, res) => {
   res.render('room')
 })
 
 //Formato que o formulario dentro da modal precisa passar a informação
-route.post('/room/:room/:question/:action', QuestionController.index)
-//route.post('room/create-room', RoomController.create)
+route.post('/question/:room/:question/:action', QuestionController.index)
+route.post('/create-room', RoomController.create)
 
 //Exportando as rotas existentes
 module.exports = route
