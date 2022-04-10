@@ -19,13 +19,13 @@ route.get('/create-pass', (req, res) =>
 })*/
 
 //Criando uma rota para a room
-route.get('/room/:room', (req, res) => {
-  res.render('room')
-})
+route.post('/create-room', RoomController.create)
+route.get('/room/:room', RoomController.open)
+route.post('/enterroom', RoomController.enter)
 
 //Formato que o formulario dentro da modal precisa passar a informação
+route.post('/question/create/:room', QuestionController.create)
 route.post('/question/:room/:question/:action', QuestionController.index)
-route.post('/create-room', RoomController.create)
 
 //Exportando as rotas existentes
 module.exports = route
