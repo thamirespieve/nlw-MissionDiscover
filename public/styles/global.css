@@ -1,0 +1,130 @@
+/*RETIRAR O STYLE PADRÂO DO NAVEGADOR*/
+* {
+  margin: 0;
+  padding: 0;
+  border: none;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+/*VARIAVEIS PADRÃO PARA O PROJETO*/
+html {
+  --black: #0d114f;
+  --white: #fafafa;
+  --red: #e83f5b;
+  --light-blue: #e0ecff;
+  --blue: #3485ff;
+  --background: #fbfcff;
+  --overlay: #040911;
+  --icons-details: #a5b0c1;
+
+  --grey-dark: #4d5e77;
+  --grey-blue: #a1b2cd;
+  --grey-medium: #eaecf2;
+  --grey-light: #e5eaf1;
+
+  --hover-blue: #5699ff;
+  --hover-red: #ea4b65;
+  --hover-grey: #8794a7;
+
+  /*1rem = 16px = 100%*/
+
+  font-size: 62.5%; /*62,5 são 10px, só para facilitar a conta do rem*/
+}
+
+body {
+  display: flex;
+  height: 100vh; /*View heigth, pegar a altura total da tela*/
+  width: 100vw; /*View width, pega a largura total da tela*/
+  background: var(--background);
+}
+
+body,
+button,
+input,
+textarea {
+  font-size: clamp(14px, 1.6rem, 2vw); /*Clamp é um intervalo de tamanho*/
+  font-family: 'Open Sans', sans-serif;
+}
+
+.contant {
+  width: 100%;
+  margin: 0 auto;
+}
+/*ESCONDER O LABEL DO INPUT*/
+.sr-only {
+  position: absolute;
+  height: 1px;
+  width: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip-path: rect(0, 0, 0, 0); /*Possição do label*/
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* INPUT E BOTÔES*/
+input,
+button,
+.button {
+  border-radius: 0.8rem;
+  height: 5rem;
+}
+
+button,
+.button {
+  font-family: 'Poppins';
+  font-weight: 500;
+  line-height: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background: var(--blue);
+  color: var(--white);
+
+  transition: filter 0.2s;
+
+  cursor: pointer;
+}
+
+button:hover,
+.button:hover {
+  filter: brightness(1.2);
+}
+
+button > img, .button > img {
+  margin-right: 1rem;
+  width: 2rem;
+}
+
+button.outlined,
+.button.outlined {
+  background: var(--white);
+  color: var(--blue);
+  border: 0.2rem solid var(--blue);
+}
+
+button.red,
+.button.red{
+background: var(--red);
+color: var(--white);
+}
+
+button.grey,
+.button.grey{
+  background: var(--grey-light);
+  color: var(--grey-dark);
+}
+/* ---- HEADER ------*/
+
+.contant header {
+  width: 80%;
+  margin: 3.5rem auto;
+}
+
+.contant header img {
+  width: 16.7rem;
+}
